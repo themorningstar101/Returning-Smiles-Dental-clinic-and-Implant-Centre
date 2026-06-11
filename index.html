@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Returning Smiles Dental Clinic & Implant Centre | Rohini, Delhi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --emerald: #0F766E;
+    --emerald-dark: #0a5c56;
+    --mint: #D1FAE5;
+    --mint-light: #f0fdf9;
+    --gold: #D6B25E;
+    --gold-light: #f0e4be;
+    --ivory: #FFFCF7;
+    --charcoal: #1A1A1A;
+    --charcoal-soft: #333;
+    --gray: #6B7280;
+    --light-gray: #F3F4F6;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Manrope', sans-serif;
+    background: var(--ivory);
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.4s ease;
+  }
+  nav.scrolled {
+    background: rgba(255,252,247,0.97);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 1px 20px rgba(0,0,0,0.06);
+    padding: 14px 5%;
+  }
+  .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--ivory);
+    line-height: 1.2;
+    transition: color 0.4s;
+  }
+  nav.scrolled .logo { color: var(--emerald); }
+  .logo span {
+    display: block;
+    font-size: 0.65rem;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.8;
+  }
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    color: rgba(255,252,247,0.85);
+    transition: color 0.3s;
+  }
+  nav.scrolled .nav-links a { color: var(--charcoal-soft); }
+  .nav-links a:hover { color: var(--gold); }
+  nav.scrolled .nav-links a:hover { color: var(--emerald); }
+  .nav-cta {
+    background: var(--gold);
+    color: var(--charcoal) !important;
+    padding: 9px 22px;
+    border-radius: 50px;
+    font-weight: 600 !important;
+    font-size: 0.8rem !important;
+    letter-spacing: 0.03em !important;
+    transition: background 0.3s, transform 0.2s !important;
+  }
+  .nav-cta:hover { background: #c9a24a !important; transform: translateY(-1px); }
+  .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+  .hamburger span { width: 22px; height: 2px; background: white; transition: background 0.4s; }
+  nav.scrolled .hamburger span { background: var(--charcoal); }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #0a4a45 0%, #0F766E 40%, #1a5c4a 70%, #0d3d36 100%);
+    z-index: 0;
+  }
+  .hero-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    background-image: radial-gradient(circle, #fff 1px, transparent 1px);
+    background-size: 30px 30px;
+    z-index: 1;
+  }
+  .hero-visual {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 52%;
+    z-index: 2;
+  }
+  .hero-visual-inner {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #0F766E, transparent 30%),
+                url('https://images.unsplash.com/photo-1629909615184-74f495363b67?w=900&auto=format&fit=crop') center/cover no-repeat;
+    opacity: 0.6;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 3;
+    padding: 0 5%;
+    max-width: 620px;
+    animation: fadeUp 1s ease both;
+  }
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 30px; height: 1px;
+    background: var(--gold);
+  }
+  .hero-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.6rem, 5.5vw, 4rem);
+    line-height: 1.12;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--gold);
+  }
+  .hero-sub {
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgba(255,255,255,0.72);
+    line-height: 1.7;
+    margin-bottom: 36px;
+    max-width: 480px;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--charcoal);
+    padding: 14px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+    border: none; cursor: pointer;
+  }
+  .btn-primary:hover { background: #c9a24a; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(214,178,94,0.4); }
+  .btn-outline {
+    background: transparent;
+    color: #fff;
+    padding: 13px 26px;
+    border-radius: 50px;
+    border: 1.5px solid rgba(255,255,255,0.4);
+    font-weight: 500;
+    font-size: 0.85rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+  }
+  .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+  .btn-whatsapp {
+    background: #25D366;
+    color: #fff;
+    padding: 13px 22px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    transition: all 0.3s;
+  }
+  .btn-whatsapp:hover { background: #1fba58; transform: translateY(-2px); }
+  .hero-stats {
+    position: absolute;
+    bottom: 50px;
+    left: 5%;
+    right: 5%;
+    z-index: 3;
+    display: flex;
+    gap: 40px;
+    animation: fadeUp 1.2s ease 0.3s both;
+  }
+  .stat-item { color: #fff; }
+  .stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2rem;
+    color: var(--gold);
+    line-height: 1;
+    display: block;
+  }
+  .stat-label {
+    font-size: 0.72rem;
+    opacity: 0.65;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+  .stat-divider { width: 1px; background: rgba(255,255,255,0.15); }
+
+  /* MARQUEE */
+  .marquee-bar {
+    background: var(--emerald);
+    padding: 12px 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .marquee-track {
+    display: inline-flex;
+    animation: marquee 20s linear infinite;
+    gap: 0;
+  }
+  .marquee-item {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.85);
+    padding: 0 28px;
+    display: inline-flex;
+    align-items: center;
+    gap: 28px;
+  }
+  .marquee-item::after {
+    content: '◆';
+    color: var(--gold);
+    font-size: 0.5rem;
+  }
+  @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+  /* ABOUT */
+  #about {
+    padding: 100px 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .about-visual {
+    position: relative;
+  }
+  .about-img-main {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    border-radius: 4px 60px 4px 60px;
+    display: block;
+  }
+  .about-badge {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    background: var(--gold);
+    color: var(--charcoal);
+    padding: 20px 24px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 12px 40px rgba(214,178,94,0.35);
+  }
+  .about-badge-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.4rem;
+    line-height: 1;
+    display: block;
+  }
+  .about-badge-txt {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+  .section-eyebrow {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--emerald);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .section-eyebrow::before { content: ''; width: 24px; height: 1.5px; background: var(--emerald); }
+  h2.section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    line-height: 1.18;
+    color: var(--charcoal);
+    margin-bottom: 20px;
+  }
+  h2.section-title em { font-style: italic; color: var(--emerald); }
+  .section-body {
+    font-size: 0.97rem;
+    line-height: 1.8;
+    color: var(--gray);
+    margin-bottom: 28px;
+  }
+  .doctor-card {
+    background: var(--mint-light);
+    border: 1px solid var(--mint);
+    border-radius: 16px;
+    padding: 20px 24px;
+    margin-top: 24px;
+  }
+  .doctor-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.3rem;
+    color: var(--emerald);
+    margin-bottom: 4px;
+  }
+  .doctor-creds {
+    font-size: 0.78rem;
+    color: var(--gray);
+    line-height: 1.6;
+  }
+  .doctor-creds span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-right: 6px;
+  }
+  .doctor-creds span::before { content: '✓'; color: var(--emerald); font-weight: 700; }
+
+  /* SERVICES */
+  #services {
+    background: var(--charcoal);
+    padding: 100px 5%;
+  }
+  .services-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+  .services-header .section-eyebrow { justify-content: center; }
+  .services-header .section-eyebrow::before { display: none; }
+  .services-header h2 { color: #fff; }
+  .services-header h2 em { color: var(--gold); }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .service-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 32px 24px;
+    transition: all 0.35s ease;
+    cursor: default;
+  }
+  .service-card:hover {
+    background: rgba(15,118,110,0.2);
+    border-color: var(--emerald);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(15,118,110,0.25);
+  }
+  .service-icon {
+    width: 48px; height: 48px;
+    background: linear-gradient(135deg, var(--emerald), #1a9990);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+  .service-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .service-desc {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.6;
+  }
+  .service-card:hover .service-name { color: var(--gold); }
+
+  /* WHY US */
+  #why {
+    padding: 100px 5%;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .why-card {
+    background: #fff;
+    border: 1px solid #f0ede8;
+    border-radius: 20px;
+    padding: 24px 20px;
+    transition: all 0.3s;
+  }
+  .why-card:hover {
+    border-color: var(--mint);
+    box-shadow: 0 8px 30px rgba(15,118,110,0.1);
+    transform: translateY(-3px);
+  }
+  .why-icon {
+    width: 40px; height: 40px;
+    background: var(--mint);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    margin-bottom: 14px;
+  }
+  .why-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1rem;
+    color: var(--charcoal);
+    margin-bottom: 6px;
+  }
+  .why-text { font-size: 0.78rem; color: var(--gray); line-height: 1.6; }
+
+  /* SMILE SHOWCASE */
+  #showcase {
+    background: var(--emerald);
+    padding: 100px 5%;
+    overflow: hidden;
+  }
+  .showcase-header { text-align: center; margin-bottom: 60px; }
+  .showcase-header .section-eyebrow {
+    justify-content: center; color: var(--gold);
+  }
+  .showcase-header .section-eyebrow::before { background: var(--gold); }
+  .showcase-header h2 { color: #fff; font-size: clamp(2rem, 4vw, 3rem); }
+  .before-after-container {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.3);
+    cursor: col-resize;
+    user-select: none;
+    aspect-ratio: 16/8;
+  }
+  .ba-after, .ba-before {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+  }
+  .ba-after {
+    background-image: url('https://images.unsplash.com/photo-1588776814546-1ffbb4b9af85?w=900&auto=format&fit=crop');
+  }
+  .ba-before {
+    background-image: url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=900&auto=format&fit=crop');
+    clip-path: inset(0 50% 0 0);
+    transition: clip-path 0.05s;
+  }
+  .ba-label {
+    position: absolute;
+    bottom: 20px;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .ba-label-before { left: 20px; background: rgba(0,0,0,0.5); color: #fff; }
+  .ba-label-after { right: 20px; background: var(--gold); color: var(--charcoal); }
+  .ba-divider {
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 50%;
+    width: 3px;
+    background: #fff;
+    transform: translateX(-50%);
+    transition: left 0.05s;
+  }
+  .ba-handle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 44px; height: 44px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    font-size: 1rem;
+    transition: left 0.05s;
+    pointer-events: none;
+  }
+  .showcase-note {
+    text-align: center;
+    color: rgba(255,255,255,0.6);
+    font-size: 0.8rem;
+    margin-top: 20px;
+    font-style: italic;
+  }
+
+  /* TESTIMONIALS */
+  #testimonials {
+    padding: 100px 5%;
+    background: var(--ivory);
+  }
+  .testimonials-header { text-align: center; margin-bottom: 56px; }
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .testimonial-card {
+    background: #fff;
+    border: 1px solid #f0ede8;
+    border-radius: 24px;
+    padding: 36px 28px;
+    position: relative;
+    transition: all 0.3s;
+  }
+  .testimonial-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.08); }
+  .testimonial-card::before {
+    content: '"';
+    font-family: 'DM Serif Display', serif;
+    font-size: 5rem;
+    color: var(--mint);
+    position: absolute;
+    top: 10px; left: 24px;
+    line-height: 1;
+  }
+  .testimonial-stars { color: #f59e0b; font-size: 0.9rem; margin-bottom: 12px; }
+  .testimonial-text {
+    font-size: 0.9rem;
+    line-height: 1.75;
+    color: var(--charcoal-soft);
+    margin-bottom: 20px;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+  }
+  .testimonial-author { display: flex; align-items: center; gap: 12px; }
+  .author-avatar {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--mint);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.1rem;
+    color: var(--emerald);
+    font-weight: 700;
+  }
+  .author-name {
+    font-weight: 700;
+    font-size: 0.88rem;
+    color: var(--charcoal);
+  }
+  .author-treatment { font-size: 0.75rem; color: var(--emerald); margin-top: 2px; }
+
+  /* APPOINTMENT */
+  #appointment {
+    background: linear-gradient(135deg, #0a4a45 0%, #0F766E 100%);
+    padding: 100px 5%;
+  }
+  .appointment-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .appointment-inner .section-eyebrow { justify-content: center; color: var(--gold); }
+  .appointment-inner .section-eyebrow::before { background: var(--gold); }
+  .appointment-inner h2 { color: #fff; margin-bottom: 12px; }
+  .appointment-inner .section-body { color: rgba(255,255,255,0.65); }
+  .appt-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 36px;
+    text-align: left;
+  }
+  .form-group { display: flex; flex-direction: column; gap: 8px; }
+  .form-group.full { grid-column: 1/-1; }
+  .form-group label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.65);
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 12px;
+    padding: 14px 18px;
+    color: #fff;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  .form-group input::placeholder,
+  .form-group textarea::placeholder { color: rgba(255,255,255,0.35); }
+  .form-group select option { background: #0F766E; }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--gold); }
+  .form-group textarea { resize: none; height: 110px; }
+  .submit-btn {
+    grid-column: 1/-1;
+    background: var(--gold);
+    color: var(--charcoal);
+    border: none;
+    padding: 16px 40px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    letter-spacing: 0.04em;
+    transition: all 0.3s;
+    font-family: 'Manrope', sans-serif;
+  }
+  .submit-btn:hover { background: #c9a24a; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(214,178,94,0.4); }
+
+  /* LOCATION */
+  #location {
+    padding: 100px 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    max-width: 1280px;
+    margin: 0 auto;
+    align-items: start;
+  }
+  .location-info .section-eyebrow { margin-bottom: 16px; }
+  .contact-items { margin-top: 32px; display: flex; flex-direction: column; gap: 20px; }
+  .contact-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .contact-icon {
+    width: 44px; height: 44px; flex-shrink: 0;
+    background: var(--mint);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+  }
+  .contact-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--emerald);
+    margin-bottom: 4px;
+  }
+  .contact-value { font-size: 0.92rem; color: var(--charcoal-soft); line-height: 1.5; }
+  .location-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 28px; }
+  .btn-sm {
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s;
+  }
+  .btn-sm-emerald { background: var(--emerald); color: #fff; }
+  .btn-sm-emerald:hover { background: var(--emerald-dark); transform: translateY(-2px); }
+  .btn-sm-outline { background: transparent; color: var(--emerald); border: 1.5px solid var(--emerald); }
+  .btn-sm-outline:hover { background: var(--emerald); color: #fff; }
+  .btn-sm-wa { background: #25D366; color: #fff; }
+  .btn-sm-wa:hover { background: #1fba58; }
+  .map-container {
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+    height: 420px;
+  }
+  .map-container iframe { width: 100%; height: 100%; border: none; }
+
+  /* FOOTER */
+  footer {
+    background: var(--charcoal);
+    color: rgba(255,255,255,0.6);
+    padding: 64px 5% 32px;
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+  .footer-logo span {
+    display: block;
+    font-size: 0.62rem;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.5;
+  }
+  .footer-tagline { font-size: 0.85rem; line-height: 1.7; margin-bottom: 20px; }
+  .footer-social { display: flex; gap: 10px; }
+  .social-btn {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  .social-btn:hover { background: var(--emerald); color: #fff; }
+  .footer-col h4 {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-links a {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .footer-links a:hover { color: var(--gold); }
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.78rem;
+  }
+  .footer-bottom a { color: var(--gold); text-decoration: none; }
+
+  /* STICKY MOBILE BAR */
+  .sticky-bar {
+    display: none;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 999;
+    background: var(--charcoal);
+    padding: 12px 16px;
+    gap: 10px;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+  }
+  .sticky-bar a {
+    flex: 1;
+    text-align: center;
+    padding: 12px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+  .sticky-appt { background: var(--gold); color: var(--charcoal); }
+  .sticky-call { background: var(--emerald); color: #fff; }
+  .sticky-wa { background: #25D366; color: #fff; }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* MOBILE MENU */
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: var(--charcoal);
+    z-index: 1100;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2rem;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .mobile-menu a:hover { color: var(--gold); }
+  .mobile-menu-close {
+    position: absolute;
+    top: 24px; right: 24px;
+    background: none; border: none;
+    color: #fff; font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    #about, #why, #location { grid-template-columns: 1fr; gap: 48px; }
+    .about-badge { right: 0; bottom: -10px; }
+    .hero-visual { width: 45%; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 768px) {
+    .nav-links, .nav-cta-wrap { display: none; }
+    .hamburger { display: flex; }
+    .hero-visual { opacity: 0.2; width: 100%; }
+    .hero-content { max-width: 100%; }
+    .hero-stats { gap: 24px; bottom: 30px; }
+    .stat-num { font-size: 1.5rem; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .appt-form { grid-template-columns: 1fr; }
+    .form-group.full { grid-column: 1; }
+    .submit-btn { grid-column: 1; }
+    .footer-top { grid-template-columns: 1fr; gap: 32px; }
+    .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+    .why-grid { grid-template-columns: 1fr; }
+    .sticky-bar { display: flex; }
+    footer { padding-bottom: 96px; }
+    #appointment { padding-bottom: 80px; }
+  }
+  @media (max-width: 480px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .hero-actions { flex-direction: column; align-items: flex-start; }
+    .hero-stats { gap: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="logo">
+    Returning Smiles
+    <span>Dental Clinic & Implant Centre</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#showcase">Smile Gallery</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#location">Location</a></li>
+    <li><a href="#appointment" class="nav-cta">Book Now</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="openMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" onclick="closeMenu()">✕</button>
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#services" onclick="closeMenu()">Services</a>
+  <a href="#showcase" onclick="closeMenu()">Smile Gallery</a>
+  <a href="#testimonials" onclick="closeMenu()">Reviews</a>
+  <a href="#location" onclick="closeMenu()">Location</a>
+  <a href="#appointment" onclick="closeMenu()" style="color: var(--gold)">Book Appointment</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-visual"><div class="hero-visual-inner"></div></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Rohini's Premier Implant Centre</div>
+    <h1 class="hero-title">
+      Bringing Back<br>
+      Smiles, <em>Confidence</em><br>
+      & Comfort
+    </h1>
+    <p class="hero-sub">Advanced Dental Implants, Cosmetic Dentistry and Complete Smile Transformations in Rohini, Delhi.</p>
+    <div class="hero-actions">
+      <a href="#appointment" class="btn-primary">📅 Book Consultation</a>
+      <a href="tel:09953636104" class="btn-outline">📞 Call Now</a>
+      <a href="https://wa.me/919953636104" class="btn-whatsapp" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat-item">
+      <span class="stat-num">4.8★</span>
+      <div class="stat-label">Google Rating</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <span class="stat-num">500+</span>
+      <div class="stat-label">Implants Placed</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <span class="stat-num">10+</span>
+      <div class="stat-label">Years Experience</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <span class="stat-num">3000+</span>
+      <div class="stat-label">Happy Patients</div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-bar">
+  <div class="marquee-track">
+    <div class="marquee-item">Dental Implants</div>
+    <div class="marquee-item">Smile Designing</div>
+    <div class="marquee-item">Root Canal Treatment</div>
+    <div class="marquee-item">Crowns & Bridges</div>
+    <div class="marquee-item">Teeth Whitening</div>
+    <div class="marquee-item">Clear Aligners</div>
+    <div class="marquee-item">Full Mouth Rehabilitation</div>
+    <div class="marquee-item">Cosmetic Dentistry</div>
+    <div class="marquee-item">Dental Implants</div>
+    <div class="marquee-item">Smile Designing</div>
+    <div class="marquee-item">Root Canal Treatment</div>
+    <div class="marquee-item">Crowns & Bridges</div>
+    <div class="marquee-item">Teeth Whitening</div>
+    <div class="marquee-item">Clear Aligners</div>
+    <div class="marquee-item">Full Mouth Rehabilitation</div>
+    <div class="marquee-item">Cosmetic Dentistry</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-visual fade-up">
+    <img class="about-img-main"
+      src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=600&auto=format&fit=crop"
+      alt="Modern dental clinic environment">
+    <div class="about-badge">
+      <span class="about-badge-num">4.8</span>
+      <div class="about-badge-txt">Google Rating<br>26+ Reviews</div>
+    </div>
+  </div>
+  <div class="about-text fade-up" style="transition-delay:0.15s">
+    <div class="section-eyebrow">Our Story</div>
+    <h2 class="section-title">More Than<br><em>Dental Care</em></h2>
+    <p class="section-body">Returning Smiles combines the latest in dental technology with deeply personalized care — because we believe every patient deserves a treatment that fits their life, not just their teeth. We restore smiles, rebuild confidence, and change lives.</p>
+    <p class="section-body">From single-tooth implants to complete smile makeovers, every treatment is planned with precision and delivered with compassion in our modern Rohini clinic.</p>
+    <div class="doctor-card">
+      <div class="doctor-name">Dr. Sanjeev K. Shokeen</div>
+      <div class="doctor-creds">
+        <span>Dental Surgeon, MAMC Delhi</span>
+        <span>Certified Implantologist, South Korea</span>
+        <span>Diplomate, World Congress for Oral Implantology, Japan</span>
+        <span>AFO Fellowship Orthodontics</span>
+        <span>Ex-Resident, LNJP Hospital</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-header fade-up">
+    <div class="section-eyebrow" style="color:var(--gold);justify-content:center;">What We Offer</div>
+    <h2 class="section-title" style="color:#fff">Our <em style="color:var(--gold)">Specialties</em></h2>
+  </div>
+  <div class="services-grid">
+    <div class="service-card fade-up">
+      <div class="service-icon">🦷</div>
+      <div class="service-name">Dental Implants</div>
+      <div class="service-desc">Permanent, natural-looking tooth replacement with cutting-edge implant technology from South Korea.</div>
+    </div>
+    <div class="service-card fade-up" style="transition-delay:0.05s">
+      <div class="service-icon">✨</div>
+      <div class="service-name">Smile Designing</div>
+      <div class="service-desc">Custom smile makeovers that balance aesthetics, symmetry, and your unique facial features.</div>
+    </div>
+    <div class="service-card fade-up" style="transition-delay:0.1s">
+      <div class="service-icon">🔬</div>
+      <div class="service-name">Root Canal Treatment</div>
+      <div class="service-desc">Painless, precision root canal therapy using rotary endodontics for faster recovery.</div>
+    </div>
+    <div class="service-card fade-up" style="transition-delay:0.15s">
+      <div class="service-icon">👑</div>
+      <div class="service-name">Crowns & Bridges</div>
+      <div class="service-desc">Ceramic, zirconia, and metal-free restorations that blend seamlessly with natural teeth.</div>
+    </div>
+    <div class="service-card fade-up" style="transition-delay:0.2s">
+      <div class="service-icon">💎</div>
+      <div class="service-name">Teeth Whitening</div>
+      <div class="service-desc">Professional-grade whitening for dramatically brighter smiles in a single visit.</div>
+    </div>
+    <div class="service-card fade-up" style="transition-delay:0.25s">
+      <div class="service-icon">🔄</div>
+      <div class="service-name">Clear Aligners</div>
+      <div class="service-desc">Discreet orthodontic alignment with removable, virtually invisible aligners.</div>
+    </div>
+    <div class="service-card fade-up" style="transition-delay:0.3s">
+      <div class="service-icon">🪄</div>
+      <div class="service-name">Cosmetic Dentistry</div>
+      <div class="service-desc">Veneers, bonding, and contouring to perfect every aspect of your smile aesthetics.</div>
+    </div>
+    <div class="service-card fade-up" style="transition-delay:0.35s">
+      <div class="service-icon">🌟</div>
+      <div class="service-name">Full Mouth Rehabilitation</div>
+      <div class="service-desc">Comprehensive restorative plans for patients needing complete oral reconstruction.</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="fade-up">
+    <div class="section-eyebrow">Why Choose Us</div>
+    <h2 class="section-title">The Returning Smiles<br><em>Difference</em></h2>
+    <p class="section-body">We're not just treating teeth — we're restoring confidence. Every detail of our clinic and care is designed around you.</p>
+    <a href="#appointment" class="btn-primary" style="text-decoration:none">Schedule Your Visit →</a>
+  </div>
+  <div class="why-grid fade-up" style="transition-delay:0.2s">
+    <div class="why-card">
+      <div class="why-icon">🏆</div>
+      <div class="why-title">Implant Expertise</div>
+      <div class="why-text">Internationally trained and certified implantologist with 500+ successful cases.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🔬</div>
+      <div class="why-title">Modern Technology</div>
+      <div class="why-text">Latest digital imaging, rotary endodontics, and Korean implant systems.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🤝</div>
+      <div class="why-title">Personalized Care</div>
+      <div class="why-text">Every treatment plan is custom-designed for your unique needs and goals.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">😌</div>
+      <div class="why-title">Comfortable Experience</div>
+      <div class="why-text">Anxiety-free environment with gentle care and clear communication throughout.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">💰</div>
+      <div class="why-title">Transparent Pricing</div>
+      <div class="why-text">No hidden costs. Clear estimates before any treatment begins.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">⭐</div>
+      <div class="why-title">Lasting Results</div>
+      <div class="why-text">Treatments built for longevity with follow-up care and maintenance support.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SHOWCASE -->
+<section id="showcase">
+  <div class="showcase-header fade-up">
+    <div class="section-eyebrow" style="color:var(--gold);justify-content:center;">Transformation Gallery</div>
+    <h2 class="section-title" style="color:#fff">Smile <em style="color:var(--gold)">Transformations</em></h2>
+    <p style="color:rgba(255,255,255,0.6);font-size:0.9rem;margin-top:10px">Drag the slider to compare before & after results</p>
+  </div>
+  <div class="before-after-container fade-up" id="baContainer">
+    <div class="ba-after"></div>
+    <div class="ba-before" id="baBefore"></div>
+    <div class="ba-divider" id="baDivider"></div>
+    <div class="ba-handle" id="baHandle">⟺</div>
+    <span class="ba-label ba-label-before">Before</span>
+    <span class="ba-label ba-label-after">After</span>
+  </div>
+  <p class="showcase-note">*Illustrative representations. Actual patient results may vary.</p>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="testimonials-header fade-up">
+    <div class="section-eyebrow" style="justify-content:center">Patient Stories</div>
+    <h2 class="section-title">What Our Patients <em>Say</em></h2>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card fade-up">
+      <div class="testimonial-stars">★★★★★</div>
+      <div class="testimonial-text">Dr. Shokeen completely transformed my smile. I had been hiding my teeth for years and after my implants, I can't stop smiling. The clinic is spotless and the whole team made me feel so at ease.</div>
+      <div class="testimonial-author">
+        <div class="author-avatar">R</div>
+        <div>
+          <div class="author-name">Rahul M.</div>
+          <div class="author-treatment">Dental Implants</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card fade-up" style="transition-delay:0.1s">
+      <div class="testimonial-stars">★★★★★</div>
+      <div class="testimonial-text">I was terrified of root canals but Dr. Shokeen made it completely painless. His experience shows. Best dental experience I've ever had, and I've been to many clinics over the years.</div>
+      <div class="testimonial-author">
+        <div class="author-avatar">P</div>
+        <div>
+          <div class="author-name">Priya S.</div>
+          <div class="author-treatment">Root Canal Treatment</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card fade-up" style="transition-delay:0.2s">
+      <div class="testimonial-stars">★★★★★</div>
+      <div class="testimonial-text">My smile design is exactly what I dreamed of. The attention to detail and the way he explained every step gave me so much confidence. Highly recommend to anyone considering cosmetic work.</div>
+      <div class="testimonial-author">
+        <div class="author-avatar">A</div>
+        <div>
+          <div class="author-name">Anjali K.</div>
+          <div class="author-treatment">Smile Designing</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPOINTMENT -->
+<section id="appointment">
+  <div class="appointment-inner">
+    <div class="section-eyebrow" style="justify-content:center;color:var(--gold)">Get Started</div>
+    <h2 class="section-title" style="color:#fff">Book Your<br><em style="color:var(--gold)">Free Consultation</em></h2>
+    <p class="section-body" style="color:rgba(255,255,255,0.6)">Take the first step toward your new smile. Our team will reach out within 24 hours to confirm your appointment.</p>
+    <form class="appt-form" onsubmit="handleSubmit(event)">
+      <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" placeholder="Full name" required>
+      </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" placeholder="+91 XXXXX XXXXX" required>
+      </div>
+      <div class="form-group">
+        <label>Treatment Interest</label>
+        <select>
+          <option value="">Select treatment</option>
+          <option>Dental Implants</option>
+          <option>Smile Designing</option>
+          <option>Root Canal Treatment</option>
+          <option>Crowns & Bridges</option>
+          <option>Teeth Whitening</option>
+          <option>Clear Aligners</option>
+          <option>Full Mouth Rehabilitation</option>
+          <option>Other / Not Sure</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Preferred Date</label>
+        <input type="date">
+      </div>
+      <div class="form-group full">
+        <label>Message (optional)</label>
+        <textarea placeholder="Tell us about your dental concerns or questions..."></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Request Appointment →</button>
+    </form>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section id="location">
+  <div class="location-info fade-up">
+    <div class="section-eyebrow">Find Us</div>
+    <h2 class="section-title">Visit Our <em>Clinic</em></h2>
+    <p class="section-body">Conveniently located in Rohini, Delhi — accessible by metro and road with parking available nearby.</p>
+    <div class="contact-items">
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div>
+          <div class="contact-label">Address</div>
+          <div class="contact-value">Gate No. 3, Plot 103, Pocket 26<br>Sector 24, Rohini, Delhi 110085</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div>
+          <div class="contact-label">Phone</div>
+          <div class="contact-value"><a href="tel:09953636104" style="color:inherit;text-decoration:none">099536 36104</a></div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">⏰</div>
+        <div>
+          <div class="contact-label">Hours</div>
+          <div class="contact-value">Monday – Saturday: 10am – 8pm<br>Sunday: By Appointment</div>
+        </div>
+      </div>
+    </div>
+    <div class="location-actions">
+      <a href="https://maps.app.goo.gl/5DLA5cPZ9RN8H7xq9" class="btn-sm btn-sm-emerald" target="_blank">🗺 Get Directions</a>
+      <a href="tel:09953636104" class="btn-sm btn-sm-outline">📞 Call Clinic</a>
+      <a href="https://wa.me/919953636104" class="btn-sm btn-sm-wa" target="_blank">💬 WhatsApp</a>
+    </div>
+  </div>
+  <div class="map-container fade-up" style="transition-delay:0.2s">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3498.8937285396457!2d77.10!3d28.72!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d03fdce3e0e0f%3A0x0!2sRohini%20Sector%2024%2C%20Delhi%2C%20110085!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
+      allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">
+        Returning Smiles
+        <span>Dental Clinic & Implant Centre</span>
+      </div>
+      <p class="footer-tagline">Restoring smiles, rebuilding confidence.<br>Advanced dental care in Rohini, Delhi.</p>
+      <div class="footer-social">
+        <a href="#" class="social-btn">f</a>
+        <a href="#" class="social-btn">in</a>
+        <a href="https://wa.me/919953636104" class="social-btn" target="_blank">w</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul class="footer-links">
+        <li><a href="#services">Dental Implants</a></li>
+        <li><a href="#services">Smile Designing</a></li>
+        <li><a href="#services">Root Canal</a></li>
+        <li><a href="#services">Teeth Whitening</a></li>
+        <li><a href="#services">Clear Aligners</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Clinic</h4>
+      <ul class="footer-links">
+        <li><a href="#about">About Dr. Shokeen</a></li>
+        <li><a href="#why">Why Choose Us</a></li>
+        <li><a href="#testimonials">Patient Reviews</a></li>
+        <li><a href="#showcase">Smile Gallery</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul class="footer-links">
+        <li><a href="tel:09953636104">099536 36104</a></li>
+        <li><a href="https://wa.me/919953636104" target="_blank">WhatsApp Us</a></li>
+        <li><a href="#appointment">Book Appointment</a></li>
+        <li><a href="https://maps.app.goo.gl/5DLA5cPZ9RN8H7xq9" target="_blank">Get Directions</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Returning Smiles Dental Clinic & Implant Centre. All rights reserved.</span>
+    <span>Designed with care · Rohini, Delhi</span>
+  </div>
+</footer>
+
+<!-- STICKY MOBILE BAR -->
+<div class="sticky-bar" id="stickyBar">
+  <a href="#appointment" class="sticky-appt">📅 Book</a>
+  <a href="tel:09953636104" class="sticky-call">📞 Call</a>
+  <a href="https://wa.me/919953636104" class="sticky-wa" target="_blank">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    WhatsApp
+  </a>
+</div>
+
+<script>
+  // Navbar scroll
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Mobile menu
+  function openMenu() { document.getElementById('mobileMenu').classList.add('open'); }
+  function closeMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
+
+  // Before/After slider
+  const container = document.getElementById('baContainer');
+  const before = document.getElementById('baBefore');
+  const divider = document.getElementById('baDivider');
+  const handle = document.getElementById('baHandle');
+  let isDragging = false;
+
+  function updateSlider(x) {
+    const rect = container.getBoundingClientRect();
+    const pct = Math.max(5, Math.min(95, (x - rect.left) / rect.width * 100));
+    before.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
+    divider.style.left = pct + '%';
+    handle.style.left = pct + '%';
+  }
+
+  container.addEventListener('mousedown', e => { isDragging = true; updateSlider(e.clientX); });
+  window.addEventListener('mousemove', e => { if (isDragging) updateSlider(e.clientX); });
+  window.addEventListener('mouseup', () => isDragging = false);
+  container.addEventListener('touchstart', e => { isDragging = true; updateSlider(e.touches[0].clientX); });
+  window.addEventListener('touchmove', e => { if (isDragging) updateSlider(e.touches[0].clientX); });
+  window.addEventListener('touchend', () => isDragging = false);
+
+  // Form submit
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.submit-btn');
+    btn.textContent = '✓ Appointment Requested!';
+    btn.style.background = '#10b981';
+    setTimeout(() => { btn.textContent = 'Request Appointment →'; btn.style.background = ''; }, 3000);
+  }
+</script>
+</body>
+</html>
